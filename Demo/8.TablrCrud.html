@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="username"placeholder="name">
+	<input type="text" id="usermobile"placeholder="mobile">
+	<input type="text" id="useremail"placeholder="email">
+
+	<button onclick="addRow()">Add</button>
+	<br><br><br>
+	<table id ="tbl1"border="1">
+		<tr>
+			<th>Action</th>
+			<th> username</th>
+			<th>userMobile</th>
+			<th>userEmail</th>
+		</tr>
+	</table>
+	<script type="text/javascript">
+	function addRow()
+	{
+		var name =document.getElementById("username").value;
+		var mobile =document.getElementById("usermobile").value;
+		var email =document.getElementById("useremail").value;
+
+		var out =`<tr>
+		<td>
+		<button onclick="removeRow(this)">Del</button>
+		</td>
+		<td>`+name+`</td>
+		<td>`+mobile+`</td>
+		<td>`+email+`</td>
+		</tr>`;
+		var t1 =document.getElementById('tbl1');
+		t1.innerHTML = t1.innerHTML+out;
+	}
+	function removeRow(elmt)
+	{
+		elmt.closest('tr').remove();
+	}
+
+	
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+</body>
+</html>

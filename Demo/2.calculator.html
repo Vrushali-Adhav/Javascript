@@ -1,0 +1,107 @@
+<!-- 
+Program Name            :Calculator
+Programming tool        :Java Script
+Programmer's Name       :Adhav  Vrushali Abasaheb
+Date                    :7 Dec 2022 -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		button
+		{
+			padding: 20px;
+			/*margin-left: 10px;*/
+		}
+		button :hover
+		{
+			background-color: blue;
+		}
+		input
+		{
+			padding: 5px;
+			margin-top: 5px;
+		}
+		.indes
+		{
+			margin-left: 40px;
+		}
+		.box button:hover
+		{
+		    background-color: gray;
+		        
+	    }
+
+	</style>
+</head>
+<body>
+
+	<center><h1>CALCULATOR</h1></center>
+	<div style="height: 400px;width: 20%;border:1px solid red;padding: 10px;margin-left: 600px;background-color: black;margin-top: 100px;"class="box">
+		<div class="indes">
+	<input type="text"id="inp_box">
+		<button onclick="onclear()">C</button>
+	<br><br>
+
+	<button onclick="addtext('0')"id="zero">0</button>
+	
+	<button onclick="addtext('%')">%</button>
+	<button onclick="addtext('*')">*</button>
+	<button onclick="addtext('/')">/</button><br><br>
+	<button onclick="addtext('7')">7</button>
+	<button onclick="addtext('8')">8</button>
+	<button onclick="addtext('9')">9</button>
+	<button onclick="addtext('-')">-</button><br><br>
+	<button onclick="addtext('4')">4</button>
+	<button onclick="addtext('5')">5</button>
+
+
+
+	<button onclick="addtext('6')">6</button>
+	<button onclick="addtext('+')">+</button><br><br>
+
+	<button onclick="addtext('1')">1</button>
+	<button onclick="addtext('2')">2</button>
+	<button onclick="addtext('3')">3</button>
+	
+	
+	<button onclick="showResult()">=</button>
+	
+	</div>
+</div>
+	<script type="text/javascript">
+		var lastkey="";
+		function addtext(txt)
+		{
+			var currentkey ="";
+			if((lastkey=='+'&& currentkey=='+')||(lastkey=='-'&& currentkey=='-')||(lastkey=='/'&& currentkey=='/')||(lastkey=='*'&& currentkey=='*'))
+			{
+
+			}
+			else
+			{
+				document.getElementById("inp_box").value+=txt;
+			}
+			lastkey=currentkey;
+
+		}
+		function showResult()
+		{
+			var inp = document.getElementById('inp_box');
+			var res = eval(inp.value);
+			inp.value=res;
+		}
+		function onclear()
+		{
+			var inp = document.getElementById('inp_box').value=null;
+			
+		}
+	</script>
+	
+	
+	
+
+</body>
+</html>

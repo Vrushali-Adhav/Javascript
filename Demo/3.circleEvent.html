@@ -1,0 +1,67 @@
+<!-- circle event -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+	<style type="text/css">
+		.circle
+		{
+			height: 200px;
+			width: 200px;
+			border-radius: 50%;
+			background-color: black;
+			overflow: hidden;
+			position: relative;
+		}
+		.circle2
+		{
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;
+			background-color: red;
+			/*left: 46px;
+			top:92px;*/
+			left: 46px;
+			top:46px;
+
+			position :absolute;
+		}
+	</style>
+<body>
+	<div class="circle">
+		<div class="circle2"id="inner_circle">
+		</div>
+	</div>
+</body>
+	<input type="text" onkeyup="movecircle(event)">
+	<script type="text/javascript">
+		function movecircle(e)
+		{
+			console.log(e);
+			if(e.key=='ArrowRight')
+			{
+				document.getElementById("inner_circle").style.left="92px";
+				document.getElementById("inner_circle").style.top="46px";
+			}
+			if(e.key=='ArrowLeft')
+			{
+				document.getElementById("inner_circle").style.left="0px";
+				document.getElementById("inner_circle").style.top="46px";
+			}
+			if(e.key=='ArrowUp')
+			{
+				document.getElementById("inner_circle").style.left="46px";
+				document.getElementById("inner_circle").style.bottom="46px";
+			}
+			if(e.key=='ArrowDown')
+			{
+				document.getElementById("inner_circle").style.left="46px";
+				document.getElementById("inner_circle").style.top="0px";
+			}
+		}
+	</script>
+</body>
+</html>

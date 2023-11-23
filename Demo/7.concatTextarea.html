@@ -1,0 +1,20 @@
+<!-- take input in input box and print it in div box -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="inp1" onkeyup="setvalue()">
+	<div id="div_in"></div>
+	<script type="text/javascript">
+		function setvalue()
+		{
+			var i1 = document.getElementById('inp1');
+			var d1 = document.getElementById('div_in');
+			d1.innerHTML = i1.value;
+		}
+	</script>
+
+</body>
+</html>

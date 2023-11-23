@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.next{
+			height: 400px;
+			width: 50%;
+			float: left;
+			border:2px solid black;
+			margin-left: 20px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"style="height:700px;width:20%;border:3px solid black;float: left;display: inline;">
+		<br><br>
+		<button onclick="div1()">Tab1</button><br><br>
+		<button onclick="div2()">Tab2</button><br><br>
+		<button onclick="div3()">Tab3</button><br><br>
+		<button onclick="div4()">Tab4</button><br><br>
+	</div>
+
+	<div class="next" id="box1"></div>
+
+
+	<script type="text/javascript">
+		function div1()
+		{
+			var a = document.getElementById('box1');
+			a.style.display="inline";
+			a.style.backgroundColor="orange";
+			
+			a.innerHTML="<h1>tab1</h1>";
+		}
+
+		function div2()
+		{
+			var a = document.getElementById('box1');
+			a.style.display="inline";
+			a.style.backgroundColor="blue";
+			
+			a.innerHTML="<h1>tab2</h1>";
+		}
+
+		function div3()
+		{
+			var a = document.getElementById('box1');
+			a.style.display="inline";
+			a.style.backgroundColor="red";
+			
+			a.innerHTML="<h1>tab3</h1>";
+		}
+
+		function div4()
+		{
+			var a = document.getElementById('box1');
+			a.style.display="inline";
+			a.style.backgroundColor="cyan";
+			
+			a.innerHTML="<h1>tab4</h1>";
+		}
+	</script>
+
+</body>
+</html>

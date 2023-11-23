@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+<center><h1>CART PAGE</h1></center>	
+<table border="1"cellpadding="6"height="30"width="100%"style="border-collapse:collapse">
+	<tr>
+		<td>Prod Name</td>
+		<td>Prod Rate</td>
+		<td>Prod Qty</td>
+		<td>Prod Total</td>
+	</tr>
+
+	<tr>
+
+	<td><input type="text" name="prod_name" id="name1"></td>
+
+	<td><input type="number" name="prod_rate" id="rate1" value="0"></td>
+
+
+	<td>
+		<button onclick="resetqty('qty1','rate1','product_tt')">-</button>
+		<input type="text" name="prod_qty" id="qty1"value="0" >
+		<button onclick="setqty('qty1','rate1','product_tt')">+</button>
+	</td>
+
+	<td>
+		<input type="text" id="product_tt"readonly value="0" >
+	</td>
+
+	</tr>
+
+
+
+	<!-- <tr>
+		<td><input type="text" name="prod_name"id="name2"></td>
+		<td><input type="number" name="prod_rate"id="rate2" value="0"></td>
+		<td>
+			<button onclick="resetqty('qty2','rate2','product_total2')">-</button>
+			<input type="text" name="prod_qty"id="qty2" value="0">
+			<button onclick="setqty('qty2','rate2','product_total2')">+</button></td>
+		<td>
+		<input type="text" id="product_total2">
+	    </td>
+	</tr>
+
+	<tr>
+		<td><input type="text" name="prod_name"id="name3"></td>
+		<td><input type="number" name="prod_rate"id="rate3"value="0"></td>
+		<td>
+			<button onclick="resetqty('qty3','rate3','product_total3')">-</button>
+			<input type="text" name="prod_qty"id="qty3" value="0">
+			<button onclick="setqty('qty3','rate3','product_total3')">+</button></td>
+		<td>
+		<input type="text" id="product_total3" value="0">
+	    </td>
+	</tr> -->
+
+	<tr>
+		<td colspan="3"style="text-align: right;"><h3>Total</h3></td>
+		
+		<td><input type="text" id="ttl" value="0"></td>
+	</tr>
+
+	<tr>
+		<td colspan="3"style="text-align: right;"><h3>Discount(10%)</h3></td>
+		
+		<td><input type="text" id="dis" value="0"></td>
+	</tr>
+
+	<tr>
+		<td colspan="3"style="text-align: right;"><h3>Net Total Bill</h3></td>
+		
+		<td><input type="text" id="nttl" value="0"></td>
+	</tr>
+
+</table>
+
+<script type="text/javascript">
+	function setqty(a,b,c)
+	{
+		var rate  = document.getElementById(b).value;
+		var rate1 = parseInt(rate);
+		var qt1 = document.getElementById(a).value;
+		var q1 = parseInt(qt1);
+		var q2 = q1+1;
+		var prod_ttl = rate1*q2;
+
+
+		document.getElementById(a).value=q2;
+		document.getElementById(c).value = prod_ttl;
+
+		var ttl1 = document.getElementById('product_tt').value;
+		var ttl2 = document.getElementById('product_total2').value;
+		var ttl3 = document.getElementById('product_total3').value;
+
+		var total = parseInt(ttl2)+parseInt(ttl3)+parseInt(ttl1);
+		console.log(total);
+
+		document.getElementById('ttl').value = total;
+
+
+
+		var dis = 10*total/100;
+		document.getElementById('dis').value=dis;
+
+		var nttl = total - dis;
+		document.getElementById('nttl').value=nttl;
+
+
+
+
+		
+	}
+
+	function resetqty(b,c,d)
+	{
+		var rate  = document.getElementById(c).value;
+		var rate1 = parseInt(rate);
+
+		var qt1 = document.getElementById(b).value;
+		var q1 = parseInt(qt1);
+		var q2 = q1-1;
+		var prod_ttl = rate1*q2;
+		document.getElementById(b).value=q2;
+		document.getElementById(d).value = prod_ttl;
+
+
+		document.getElementById(b).value=q2;
+		document.getElementById(d).value = prod_ttl;
+
+		var ttl1 = document.getElementById('product_tt').value;
+		var ttl2 = document.getElementById('product_total2').value;
+		var ttl3 = document.getElementById('product_total3').value;
+
+		var total = parseInt(ttl2)+parseInt(ttl3)+parseInt(ttl1);
+		
+
+		document.getElementById('ttl').value = total;
+
+			var dis = 10*total/100;
+		document.getElementById('dis').value=dis;
+
+		var nttl = total - dis;
+		document.getElementById('nttl').value=nttl;
+	}
+
+	
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div style="height: 740px;width: 70%;float:left;">
+     <center><h1>Photo Editor</h1>
+     Enter image url:<input type="text"id="urlpath">
+     <button onclick="imgset()">submit</button>
+     <br><br><br><br><br><br>
+    
+     <img src=""id="img1">
+     
+ </center>
+</div>
+<div style="width:28%;background-color: gray;height: 740px;float: left;padding: 10px;">
+	<h1 style="color:blue">Basic Adjustment</h1>
+
+		Brightness <input type="range"min="10"max="100"id="inp1" onchange="bright1()"> 100%<br><br>
+
+		contrast <input type="range"min="10"max="100"id="inp2"onchange="contrast1()"> 100%<br><br>
+
+		Saturation <input type="range"min="10"max="100"id="inp3"onchange="saturation1()"> 100%<br><br>
+
+		Blur <input type="range"min="10"max="100"id="inp4"onchange="blur1()"> 100%<br><br>
+
+		opacity <input type="range"min="10"max="100"id="inp5"onchange="opacity1()"> 0px<br><br><br><br><br>
+
+		Transform <input type="range"min="0"max="360"id="inp6"onchange="rotate1()"> 100%<br><br>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+	function imgset()
+	{
+		var path = document.getElementById('urlpath').value;
+		var img=document.getElementById('img1');
+		img.src=path;
+	}
+
+	function bright1()
+	{
+	var in1 = document.getElementById('inp1').value;
+	var img = document.getElementById('img1');
+	img.style.filter='brightness('+in1+'%)';
+
+	}
+
+	function contrast1()
+	{
+		var in1 = document.getElementById('inp2').value;
+	var img = document.getElementById('img1');
+	 img.style.filter='contrast('+in1+'%)';
+	}
+	function saturation1()
+	{
+		var in1 = document.getElementById('inp3').value;
+	   var img = document.getElementById('img1');
+	  img.style.filter='saturate('+in1+'%)';
+	}
+	function blur1()
+	{
+		var in1 = document.getElementById('inp4').value;
+	   var img = document.getElementById('img1');
+	  img.style.filter='blur('+in1+'%)';
+	}
+	function opacity1()
+	{
+		var in1 = document.getElementById('inp5').value;
+	   var img = document.getElementById('img1');
+	  img.style.filter='opacity('+in1+'%)';
+	}
+	function rotate1()
+	{
+		var in1 = document.getElementById('inp6').value;
+	   var img = document.getElementById('img1');
+	  img.style.transform='rotate('+in1+'deg)';
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
